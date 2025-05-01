@@ -1,0 +1,15 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: cluster-kube-news
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 30000
+    hostPort: 30000
+    protocol: TCP
+    listenAddress: "0.0.0.0"
+- role: control-plane
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
