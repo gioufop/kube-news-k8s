@@ -72,8 +72,12 @@ spec:
   selector:
     app: kubenews
   ports:
+  # configuração de nodePort necessária para rodar localmente usando o Kind
   - port: 80
     targetPort: 8080
-    # configuração de nodePort necessária para rodar localmente usando o Kind
     nodePort: 30000
-  type: NodePort # Para rodar na nuvem preciso usar o type LoadBalancer!
+  type: NodePort 
+  # Para rodar na nuvem é preciso usar o type LoadBalancer, dessa forma:
+  # - port: 80
+  #   targetPort: 8080
+  # type: LoadBalancer
